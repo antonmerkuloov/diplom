@@ -1,6 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
-
+export const dynamic = 'force-dynamic';
 export default function NewCharacterPage() {
   async function createCharacter(formData: FormData) {
     'use server'

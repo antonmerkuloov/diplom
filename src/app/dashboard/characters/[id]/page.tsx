@@ -1,7 +1,7 @@
 import { createClient } from '@/lib/supabase/server';
 import { notFound, redirect } from 'next/navigation';
 import Link from 'next/link';
-
+export const dynamic = 'force-dynamic';
 import CharacterStatusEditor from '@/components/characters/CharacterStatusEditor';
 import AbilityScoresEditor from '@/components/characters/AbilityScoresEditor';
 import SkillList from '@/components/characters/SkillList';
