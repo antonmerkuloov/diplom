@@ -1,8 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { createClient } from '@/lib/supabase/client';
-
+import { createClient } from '@/lib/supabase/client'
 const getMod = (s: number) => Math.floor((s - 10) / 2);
 
 export default function AbilityScoresEditor({ characterId, initialScores }: any) {
