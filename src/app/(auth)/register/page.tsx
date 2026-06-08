@@ -69,8 +69,8 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black">
-      <div className="bg-gray-900 p-8 rounded-lg shadow-lg w-full max-w-md border border-gray-700">
+    <div className="min-h-screen flex items-center justify-center bg-[var(--bg-card)]k">
+      <div className="bg-[var(--bg-card)]-900 p-8 rounded-lg shadow-lg w-full max-w-md border border-[var(--border)]-700">
         <h1 className="text-2xl font-bold text-gold text-center mb-6">Регистрация</h1>
 
         {errors.general && (
@@ -81,7 +81,7 @@ export default function RegisterPage() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="username" className="block text-sm font-medium text-gray-300">
+            <label htmlFor="username" className="block text-sm font-medium text-[var(--text-secondary)]">
               Имя пользователя
             </label>
             <input
@@ -89,15 +89,15 @@ export default function RegisterPage() {
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className={`mt-1 w-full px-3 py-2 bg-gray-800 border rounded-md text-white focus:outline-none focus:ring-2 focus:ring-gold ${
-                errors.username ? 'border-red-500' : 'border-gray-600'
+              className={`mt-1 w-full px-3 py-2 bg-[var(--bg-card)]-800 border rounded-md text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-gold ${
+                errors.username ? 'border-red-500' : 'border-[var(--border)]-600'
               }`}
             />
             {errors.username && <p className="text-red-400 text-xs mt-1">{errors.username}</p>}
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-300">
+            <label htmlFor="email" className="block text-sm font-medium text-[var(--text-secondary)]">
               Email
             </label>
             <input
@@ -105,15 +105,15 @@ export default function RegisterPage() {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className={`mt-1 w-full px-3 py-2 bg-gray-800 border rounded-md text-white focus:outline-none focus:ring-2 focus:ring-gold ${
-                errors.email ? 'border-red-500' : 'border-gray-600'
+              className={`mt-1 w-full px-3 py-2 bg-[var(--bg-card)]-800 border rounded-md text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-gold ${
+                errors.email ? 'border-red-500' : 'border-[var(--border)]-600'
               }`}
             />
             {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-300">
+            <label htmlFor="password" className="block text-sm font-medium text-[var(--text-secondary)]">
               Пароль
             </label>
             <input
@@ -121,8 +121,8 @@ export default function RegisterPage() {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className={`mt-1 w-full px-3 py-2 bg-gray-800 border rounded-md text-white focus:outline-none focus:ring-2 focus:ring-gold ${
-                errors.password ? 'border-red-500' : 'border-gray-600'
+              className={`mt-1 w-full px-3 py-2 bg-[var(--bg-card)]-800 border rounded-md text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-gold ${
+                errors.password ? 'border-red-500' : 'border-[var(--border)]-600'
               }`}
             />
             {errors.password && <p className="text-red-400 text-xs mt-1">{errors.password}</p>}
@@ -137,7 +137,7 @@ export default function RegisterPage() {
           </button>
         </form>
 
-        <p className="mt-4 text-center text-gray-400">
+        <p className="mt-4 text-center text-[var(--text-secondary)]">
           Уже есть аккаунт?{' '}
           <Link href="/login" className="text-gold hover:underline">
             Войти

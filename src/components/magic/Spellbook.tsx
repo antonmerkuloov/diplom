@@ -95,11 +95,11 @@ export default function Spellbook({ characterId }: { characterId: string }) {
   }
 
   return (
-    <div className="bg-gray-800 p-4 rounded-lg mt-6">
+    <div className="bg-[var(--bg-card)]-800 p-4 rounded-lg mt-6">
       <h2 className="text-xl font-semibold text-gold">Заклинания</h2>
       <div className="flex flex-wrap gap-2 my-2">
         {slots.map(s => (
-          <span key={s.circle} className="bg-gray-700 px-2 py-1 rounded">
+          <span key={s.circle} className="bg-[var(--bg-card)]-700 px-2 py-1 rounded">
             {s.circle} круг: {s.used_slots}/{s.total_slots}
           </span>
         ))}

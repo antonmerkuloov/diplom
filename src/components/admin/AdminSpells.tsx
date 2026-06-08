@@ -83,29 +83,29 @@ export default function AdminSpells() {
     }
   }
 
-  if (loading) return <div className="text-gray-400">Загрузка заклинаний...</div>
+  if (loading) return <div className="text-[var(--text-secondary)]">Загрузка заклинаний...</div>
 
   return (
-    <div className="bg-gray-800 p-4 rounded-lg my-4">
+    <div className="bg-[var(--bg-card)]-800 p-4 rounded-lg my-4">
       <h2 className="text-xl font-semibold text-gold mb-4">Управление заклинаниями</h2>
 
       {message && <div className="mb-2 text-sm text-green-400">{message}</div>}
 
       {/* Форма добавления */}
-      <form action={addSpell} className="grid md:grid-cols-3 gap-3 p-3 bg-gray-700 rounded mb-4">
-        <input name="name" placeholder="Название заклинания" required className="bg-gray-600 px-2 py-1 rounded" />
-        <input name="circle" type="number" placeholder="Круг (1-5)" min="1" max="5" defaultValue="1" className="bg-gray-600 px-2 py-1 rounded" />
-        <input name="mana_cost" type="number" placeholder="Стоимость маны" defaultValue="0" className="bg-gray-600 px-2 py-1 rounded" />
-        <input name="stamina_cost" type="number" placeholder="Стоимость выносливости" defaultValue="0" className="bg-gray-600 px-2 py-1 rounded" />
-        <input name="threshold" type="number" placeholder="Порог (опционально)" className="bg-gray-600 px-2 py-1 rounded" />
-        <input name="description" placeholder="Описание" className="bg-gray-600 px-2 py-1 rounded" />
+      <form action={addSpell} className="grid md:grid-cols-3 gap-3 p-3 bg-[var(--bg-card)]-700 rounded mb-4">
+        <input name="name" placeholder="Название заклинания" required className="bg-[var(--bg-card)]-600 px-2 py-1 rounded" />
+        <input name="circle" type="number" placeholder="Круг (1-5)" min="1" max="5" defaultValue="1" className="bg-[var(--bg-card)]-600 px-2 py-1 rounded" />
+        <input name="mana_cost" type="number" placeholder="Стоимость маны" defaultValue="0" className="bg-[var(--bg-card)]-600 px-2 py-1 rounded" />
+        <input name="stamina_cost" type="number" placeholder="Стоимость выносливости" defaultValue="0" className="bg-[var(--bg-card)]-600 px-2 py-1 rounded" />
+        <input name="threshold" type="number" placeholder="Порог (опционально)" className="bg-[var(--bg-card)]-600 px-2 py-1 rounded" />
+        <input name="description" placeholder="Описание" className="bg-[var(--bg-card)]-600 px-2 py-1 rounded" />
         <button type="submit" className="bg-gold text-black px-3 py-1 rounded col-span-3 md:col-span-1">Добавить заклинание</button>
       </form>
 
       {/* Список заклинаний */}
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
-          <thead className="bg-gray-700">
+          <thead className="bg-[var(--bg-card)]-700">
             <tr>
               <th className="p-2 text-left">Название</th>
               <th className="p-2">Круг</th>
@@ -117,7 +117,7 @@ export default function AdminSpells() {
           </thead>
           <tbody>
             {spells.map((spell) => (
-              <tr key={spell.id} className="border-t border-gray-700">
+              <tr key={spell.id} className="border-t border-[var(--border)]-700">
                 <td className="p-2">{spell.name}</td>
                 <td className="p-2 text-center">{spell.circle}</td>
                 <td className="p-2 text-center">{spell.mana_cost}</td>

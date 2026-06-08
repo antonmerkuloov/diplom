@@ -65,17 +65,17 @@ export default function AdminSkills() {
     }
   }
 
-  if (loading) return <div className="text-gray-400">Загрузка навыков...</div>
+  if (loading) return <div className="text-[var(--text-secondary)]">Загрузка навыков...</div>
 
   return (
-    <div className="bg-gray-800 p-4 rounded-lg my-4">
+    <div className="bg-[var(--bg-card)]-800 p-4 rounded-lg my-4">
       <h2 className="text-xl font-semibold text-gold mb-4">Управление глобальными навыками</h2>
 
       {message && <div className="mb-2 text-sm text-green-400">{message}</div>}
 
-      <form action={addSkill} className="grid md:grid-cols-3 gap-3 p-3 bg-gray-700 rounded mb-4">
-        <input name="name" placeholder="Название навыка (англ)" required className="bg-gray-600 px-2 py-1 rounded" />
-        <select name="ability_score" required className="bg-gray-600 px-2 py-1 rounded">
+      <form action={addSkill} className="grid md:grid-cols-3 gap-3 p-3 bg-[var(--bg-card)]-700 rounded mb-4">
+        <input name="name" placeholder="Название навыка (англ)" required className="bg-[var(--bg-card)]-600 px-2 py-1 rounded" />
+        <select name="ability_score" required className="bg-[var(--bg-card)]-600 px-2 py-1 rounded">
           <option value="strength">Сила (strength)</option>
           <option value="dexterity">Ловкость (dexterity)</option>
           <option value="constitution">Телосложение (constitution)</option>
@@ -83,13 +83,13 @@ export default function AdminSkills() {
           <option value="wisdom">Мудрость (wisdom)</option>
           <option value="charisma">Харизма (charisma)</option>
         </select>
-        <input name="description" placeholder="Описание" className="bg-gray-600 px-2 py-1 rounded" />
+        <input name="description" placeholder="Описание" className="bg-[var(--bg-card)]-600 px-2 py-1 rounded" />
         <button type="submit" className="bg-gold text-black px-3 py-1 rounded col-span-3 md:col-span-1">Добавить навык</button>
       </form>
 
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
-          <thead className="bg-gray-700">
+          <thead className="bg-[var(--bg-card)]-700">
             <tr>
               <th className="p-2 text-left">Название</th>
               <th className="p-2">Характеристика</th>
@@ -99,7 +99,7 @@ export default function AdminSkills() {
           </thead>
           <tbody>
             {skills.map((skill) => (
-              <tr key={skill.id} className="border-t border-gray-700">
+              <tr key={skill.id} className="border-t border-[var(--border)]-700">
                 <td className="p-2">{skill.name}</td>
                 <td className="p-2">{skill.ability_score}</td>
                 <td className="p-2">{skill.description || '-'}</td>

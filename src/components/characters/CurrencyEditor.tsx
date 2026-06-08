@@ -13,11 +13,8 @@ export default function CurrencyEditor({ characterId, initialGold, initialSilver
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const { error } = await supabase
-      .from('characters')
-      .update({ gold, silver, copper })
-      .eq('id', characterId);
-    if (error) setMessage('Ошибка сохранения');
+    const { error } = await supabase.from('characters').update({ gold, silver, copper }).eq('id', characterId);
+    if (error) setMessage('Ошибка');
     else {
       setMessage('Сохранено');
       router.refresh();
@@ -26,41 +23,15 @@ export default function CurrencyEditor({ characterId, initialGold, initialSilver
   };
 
   return (
-    <div className="bg-gray-800 p-4 rounded-lg">
+    <div className="card">
       <h2 className="text-xl font-semibold text-gold mb-2">Сокровища</h2>
       <form onSubmit={handleSubmit} className="grid grid-cols-3 gap-2">
-        <div>
-          <label className="block text-sm text-gray-300">🟡 Золото</label>
-          <input
-            type="number"
-            value={gold}
-            onChange={(e) => setGold(Number(e.target.value))}
-            className="w-full bg-gray-700 p-1 rounded"
-          />
-        </div>
-        <div>
-          <label className="block text-sm text-gray-300">⚪ Серебро</label>
-          <input
-            type="number"
-            value={silver}
-            onChange={(e) => setSilver(Number(e.target.value))}
-            className="w-full bg-gray-700 p-1 rounded"
-          />
-        </div>
-        <div>
-          <label className="block text-sm text-gray-300">🟤 Медь</label>
-          <input
-            type="number"
-            value={copper}
-            onChange={(e) => setCopper(Number(e.target.value))}
-            className="w-full bg-gray-700 p-1 rounded"
-          />
-        </div>
-        <button type="submit" className="col-span-3 bg-gold text-black p-1 rounded mt-2">
-          Сохранить
-        </button>
+        <div><label className="block text-sm text-[var(--text-secondary)]">🟡 Золото</label><input type="number" value={gold} onChange={e => setGold(+e.target.value)} className="w-full p-2 bg-[var(--bg-primary)] text-[var(--text-primary)] border border-[var(--border)] rounded" /></div>
+        <div><label className="block text-sm text-[var(--text-secondary)]">⚪ Серебро</label><input type="number" value={silver} onChange={e => setSilver(+e.target.value)} className="w-full p-2 bg-[var(--bg-primary)] text-[var(--text-primary)] border border-[var(--border)] rounded" /></div>
+        <div><label className="block text-sm text-[var(--text-secondary)]">🟤 Медь</label><input type="number" value={copper} onChange={e => setCopper(+e.target.value)} className="w-full p-2 bg-[var(--bg-primary)] text-[var(--text-primary)] border border-[var(--border)] rounded" /></div>
+        <button type="submit" className="col-span-3 bg-gold text-black font-bold py-2 rounded hover:bg-yellow-600 transition">Сохранить</button>
       </form>
-      {message && <div className="text-green-400 text-sm mt-1">{message}</div>}
+      {message && <p className="text-green-500 text-sm mt-2">{message}</p>}
     </div>
   );
 }

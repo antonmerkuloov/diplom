@@ -36,3 +36,39 @@ body {
     border-color: #d4af37;
   }
 }
+@keyframes float {
+  from { transform: translateY(0px) rotate(0deg); }
+  to { transform: translateY(-20px) rotate(5deg); }
+}
+:root {
+  --bg-primary: #f5f5f0;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --border: #e0e0e0;
+  --rune-color: #8B6914; /* тёмно-бронзовый, хорошо виден на светлом фоне */
+}
+.dark {
+  --bg-primary: #0a0e27;
+  --bg-card: #1a1f3a;
+  --text-primary: #e0e0e0;
+  --text-secondary: #9ca3af;
+  --border: #374151;
+  --rune-color: #d4af37; /* золотой для тёмной темы */
+}
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+.card {
+  background-color: var(--bg-card);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.dark .card {
+  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}

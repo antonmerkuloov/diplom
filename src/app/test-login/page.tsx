@@ -18,7 +18,7 @@ export default function TestLogin() {
     <div className="p-8 space-y-2">
       <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" className="border p-2" />
       <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" className="border p-2" />
-      <button onClick={handleLogin} className="bg-blue-500 text-white p-2">Login</button>
+      <button onClick={handleLogin} className="bg-blue-500 text-[var(--text-primary)] p-2">Login</button>
       <pre>{result}</pre>
     </div>
   )

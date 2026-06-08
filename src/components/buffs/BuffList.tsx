@@ -33,7 +33,7 @@ export default function BuffList({ characterId }: { characterId: string }) {
   }
 
   return (
-    <div className="bg-gray-800 p-2 rounded">
+    <div className="bg-[var(--bg-card)]-800 p-2 rounded">
       <h3>Активные эффекты</h3>
       {buffs.map(b => (
         <div key={b.id} className={`flex justify-between ${b.type === 'buff' ? 'text-green-400' : 'text-red-400'}`}>
